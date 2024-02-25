@@ -9,17 +9,13 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
-
-
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
-
 ---
 --- drop tables
 ---
-
 
 DROP TABLE IF EXISTS customer_customer_demo;
 DROP TABLE IF EXISTS customer_demographics;
@@ -47,7 +43,6 @@ CREATE TABLE categories (
     picture bytea
 );
 
-
 --
 -- Name: customer_customer_demo; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
@@ -57,7 +52,6 @@ CREATE TABLE customer_customer_demo (
     customer_type_id bpchar NOT NULL
 );
 
-
 --
 -- Name: customer_demographics; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
@@ -66,7 +60,6 @@ CREATE TABLE customer_demographics (
     customer_type_id bpchar NOT NULL,
     customer_desc text
 );
-
 
 --
 -- Name: customers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -85,7 +78,6 @@ CREATE TABLE customers (
     phone character varying(24),
     fax character varying(24)
 );
-
 
 --
 -- Name: employees; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -112,7 +104,6 @@ CREATE TABLE employees (
     photo_path character varying(255)
 );
 
-
 --
 -- Name: employee_territories; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
@@ -121,9 +112,6 @@ CREATE TABLE employee_territories (
     employee_id smallint NOT NULL,
     territory_id character varying(20) NOT NULL
 );
-
-
-
 
 --
 -- Name: order_details; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -136,7 +124,6 @@ CREATE TABLE order_details (
     quantity smallint NOT NULL,
     discount real NOT NULL
 );
-
 
 --
 -- Name: orders; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -159,7 +146,6 @@ CREATE TABLE orders (
     ship_country character varying(15)
 );
 
-
 --
 -- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
@@ -177,7 +163,6 @@ CREATE TABLE products (
     discontinued integer NOT NULL
 );
 
-
 --
 -- Name: region; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
@@ -186,7 +171,6 @@ CREATE TABLE region (
     region_id smallint NOT NULL,
     region_description bpchar NOT NULL
 );
-
 
 --
 -- Name: shippers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -197,8 +181,6 @@ CREATE TABLE shippers (
     company_name character varying(40) NOT NULL,
     phone character varying(24)
 );
-
-
 
 --
 -- Name: suppliers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -219,7 +201,6 @@ CREATE TABLE suppliers (
     homepage text
 );
 
-
 --
 -- Name: territories; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
@@ -229,7 +210,6 @@ CREATE TABLE territories (
     territory_description bpchar NOT NULL,
     region_id smallint NOT NULL
 );
-
 
 --
 -- Name: us_states; Type: TABLE; Schema: public; Owner: -; Tablespace: 
@@ -241,7 +221,6 @@ CREATE TABLE us_states (
     state_abbr character varying(2),
     state_region character varying(50)
 );
-
 
 --
 -- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: -
@@ -256,18 +235,13 @@ INSERT INTO categories VALUES (6, 'Meat/Poultry', 'Prepared meats', '\x');
 INSERT INTO categories VALUES (7, 'Produce', 'Dried fruit and bean curd', '\x');
 INSERT INTO categories VALUES (8, 'Seafood', 'Seaweed and fish', '\x');
 
-
 --
 -- Data for Name: customer_customer_demo; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-
-
 --
 -- Data for Name: customer_demographics; Type: TABLE DATA; Schema: public; Owner: -
 --
-
-
 
 --
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: -
@@ -365,7 +339,6 @@ INSERT INTO customers VALUES ('WHITC', 'White Clover Markets', 'Karl Jablonski',
 INSERT INTO customers VALUES ('WILMK', 'Wilman Kala', 'Matti Karttunen', 'Owner/Marketing Assistant', 'Keskuskatu 45', 'Helsinki', NULL, '21240', 'Finland', '90-224 8858', '90-224 8858');
 INSERT INTO customers VALUES ('WOLZA', 'Wolski  Zajazd', 'Zbyszek Piestrzeniewicz', 'Owner', 'ul. Filtrowa 68', 'Warszawa', NULL, '01-012', 'Poland', '(26) 642-7012', '(26) 642-7012');
 
-
 --
 -- Data for Name: employees; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -379,7 +352,6 @@ INSERT INTO employees VALUES (6, 'Suyama', 'Michael', 'Sales Representative', 'M
 INSERT INTO employees VALUES (7, 'King', 'Robert', 'Sales Representative', 'Mr.', '1960-05-29', '1994-01-02', 'Edgeham Hollow\nWinchester Way', 'London', NULL, 'RG1 9SP', 'UK', '(71) 555-5598', '465', '\x', 'Robert King served in the Peace Corps and traveled extensively before completing his degree in English at the University of Michigan in 1992, the year he joined the company.  After completing a course entitled Selling in Europe, he was transferred to the London office in March 1993.', 5, 'http://accweb/emmployees/davolio.bmp');
 INSERT INTO employees VALUES (8, 'Callahan', 'Laura', 'Inside Sales Coordinator', 'Ms.', '1958-01-09', '1994-03-05', '4726 - 11th Ave. N.E.', 'Seattle', 'WA', '98105', 'USA', '(206) 555-1189', '2344', '\x', 'Laura received a BA in psychology from the University of Washington.  She has also completed a course in business French.  She reads and writes French.', 2, 'http://accweb/emmployees/davolio.bmp');
 INSERT INTO employees VALUES (9, 'Dodsworth', 'Anne', 'Sales Representative', 'Ms.', '1966-01-27', '1994-11-15', '7 Houndstooth Rd.', 'London', NULL, 'WG2 7LT', 'UK', '(71) 555-4444', '452', '\x', 'Anne has a BA degree in English from St. Lawrence College.  She is fluent in French and German.', 5, 'http://accweb/emmployees/davolio.bmp');
-
 
 --
 -- Data for Name: employee_territories; Type: TABLE DATA; Schema: public; Owner: -
@@ -434,7 +406,6 @@ INSERT INTO employee_territories VALUES (9, '48084');
 INSERT INTO employee_territories VALUES (9, '48304');
 INSERT INTO employee_territories VALUES (9, '55113');
 INSERT INTO employee_territories VALUES (9, '55439');
-
 
 --
 -- Data for Name: order_details; Type: TABLE DATA; Schema: public; Owner: -
@@ -2596,7 +2567,6 @@ INSERT INTO order_details VALUES (11077, 73, 15, 2, 0.00999999978);
 INSERT INTO order_details VALUES (11077, 75, 7.75, 4, 0);
 INSERT INTO order_details VALUES (11077, 77, 13, 2, 0);
 
-
 --
 -- Data for Name: orders; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -3573,7 +3543,6 @@ INSERT INTO suppliers VALUES (27, 'Escargots Nouveaux', 'Marie Delamare', 'Sales
 INSERT INTO suppliers VALUES (28, 'Gai pâturage', 'Eliane Noz', 'Sales Representative', 'Bat. B 3, rue des Alpes', 'Annecy', NULL, '74000', 'France', '38.76.98.06', '38.76.98.58', NULL);
 INSERT INTO suppliers VALUES (29, 'Forêts d''érables', 'Chantal Goulet', 'Accounting Manager', '148 rue Chasseur', 'Ste-Hyacinthe', 'Québec', 'J2S 7S8', 'Canada', '(514) 555-2955', '(514) 555-2921', NULL);
 
-
 --
 -- Data for Name: territories; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -3632,7 +3601,6 @@ INSERT INTO territories VALUES ('98004', 'Bellevue', 2);
 INSERT INTO territories VALUES ('98052', 'Redmond', 2);
 INSERT INTO territories VALUES ('98104', 'Seattle', 2);
 
-
 --
 -- Data for Name: us_states; Type: TABLE DATA; Schema: public; Owner: -
 --
@@ -3689,222 +3657,168 @@ INSERT INTO us_states VALUES (49, 'West Virginia', 'WV', 'south');
 INSERT INTO us_states VALUES (50, 'Wisconsin', 'WI', 'midwest');
 INSERT INTO us_states VALUES (51, 'Wyoming', 'WY', 'west');
 
-
 --
 -- Name: pk_categories; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY categories
-    ADD CONSTRAINT pk_categories PRIMARY KEY (category_id);
+ALTER TABLE ONLY categories ADD CONSTRAINT pk_categories PRIMARY KEY (category_id);
 
 
 --
 -- Name: pk_customer_customer_demo; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY customer_customer_demo
-    ADD CONSTRAINT pk_customer_customer_demo PRIMARY KEY (customer_id, customer_type_id);
-
+ALTER TABLE ONLY customer_customer_demo ADD CONSTRAINT pk_customer_customer_demo PRIMARY KEY (customer_id, customer_type_id);
 
 --
 -- Name: pk_customer_demographics; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY customer_demographics
-    ADD CONSTRAINT pk_customer_demographics PRIMARY KEY (customer_type_id);
-
+ALTER TABLE ONLY customer_demographics ADD CONSTRAINT pk_customer_demographics PRIMARY KEY (customer_type_id);
 
 --
 -- Name: pk_customers; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY customers
-    ADD CONSTRAINT pk_customers PRIMARY KEY (customer_id);
-
+ALTER TABLE ONLY customers ADD CONSTRAINT pk_customers PRIMARY KEY (customer_id);
 
 --
 -- Name: pk_employees; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY employees
-    ADD CONSTRAINT pk_employees PRIMARY KEY (employee_id);
-
+ALTER TABLE ONLY employees ADD CONSTRAINT pk_employees PRIMARY KEY (employee_id);
 
 --
 -- Name: pk_employee_territories; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY employee_territories
-    ADD CONSTRAINT pk_employee_territories PRIMARY KEY (employee_id, territory_id);
-
+ALTER TABLE ONLY employee_territories ADD CONSTRAINT pk_employee_territories PRIMARY KEY (employee_id, territory_id);
 
 --
 -- Name: pk_order_details; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY order_details
-    ADD CONSTRAINT pk_order_details PRIMARY KEY (order_id, product_id);
-
+ALTER TABLE ONLY order_details ADD CONSTRAINT pk_order_details PRIMARY KEY (order_id, product_id);
 
 --
 -- Name: pk_orders; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY orders
-    ADD CONSTRAINT pk_orders PRIMARY KEY (order_id);
-
+ALTER TABLE ONLY orders ADD CONSTRAINT pk_orders PRIMARY KEY (order_id);
 
 --
 -- Name: pk_products; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY products
-    ADD CONSTRAINT pk_products PRIMARY KEY (product_id);
-
+ALTER TABLE ONLY products ADD CONSTRAINT pk_products PRIMARY KEY (product_id);
 
 --
 -- Name: pk_region; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY region
-    ADD CONSTRAINT pk_region PRIMARY KEY (region_id);
-
+ALTER TABLE ONLY region ADD CONSTRAINT pk_region PRIMARY KEY (region_id);
 
 --
 -- Name: pk_shippers; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY shippers
-    ADD CONSTRAINT pk_shippers PRIMARY KEY (shipper_id);
-
+ALTER TABLE ONLY shippers ADD CONSTRAINT pk_shippers PRIMARY KEY (shipper_id);
 
 --
 -- Name: pk_suppliers; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY suppliers
-    ADD CONSTRAINT pk_suppliers PRIMARY KEY (supplier_id);
-
+ALTER TABLE ONLY suppliers ADD CONSTRAINT pk_suppliers PRIMARY KEY (supplier_id);
 
 --
 -- Name: pk_territories; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY territories
-    ADD CONSTRAINT pk_territories PRIMARY KEY (territory_id);
-
+ALTER TABLE ONLY territories ADD CONSTRAINT pk_territories PRIMARY KEY (territory_id);
 
 --
 -- Name: pk_usstates; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
-ALTER TABLE ONLY us_states
-    ADD CONSTRAINT pk_usstates PRIMARY KEY (state_id);
-
+ALTER TABLE ONLY us_states ADD CONSTRAINT pk_usstates PRIMARY KEY (state_id);
 
 --
 -- Name: fk_orders_customers; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY orders
-    ADD CONSTRAINT fk_orders_customers FOREIGN KEY (customer_id) REFERENCES customers;
-
+ALTER TABLE ONLY orders ADD CONSTRAINT fk_orders_customers FOREIGN KEY (customer_id) REFERENCES customers;
 
 --
 -- Name: fk_orders_employees; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY orders
-    ADD CONSTRAINT fk_orders_employees FOREIGN KEY (employee_id) REFERENCES employees;
-
+ALTER TABLE ONLY orders ADD CONSTRAINT fk_orders_employees FOREIGN KEY (employee_id) REFERENCES employees;
 
 --
 -- Name: fk_orders_shippers; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY orders
-    ADD CONSTRAINT fk_orders_shippers FOREIGN KEY (ship_via) REFERENCES shippers;
-
+ALTER TABLE ONLY orders ADD CONSTRAINT fk_orders_shippers FOREIGN KEY (ship_via) REFERENCES shippers;
 
 --
 -- Name: fk_order_details_products; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY order_details
-    ADD CONSTRAINT fk_order_details_products FOREIGN KEY (product_id) REFERENCES products;
-
+ALTER TABLE ONLY order_details ADD CONSTRAINT fk_order_details_products FOREIGN KEY (product_id) REFERENCES products;
 
 --
 -- Name: fk_order_details_orders; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY order_details
-    ADD CONSTRAINT fk_order_details_orders FOREIGN KEY (order_id) REFERENCES orders;
-
+ALTER TABLE ONLY order_details ADD CONSTRAINT fk_order_details_orders FOREIGN KEY (order_id) REFERENCES orders;
 
 --
 -- Name: fk_products_categories; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY products
-    ADD CONSTRAINT fk_products_categories FOREIGN KEY (category_id) REFERENCES categories;
-
+ALTER TABLE ONLY products ADD CONSTRAINT fk_products_categories FOREIGN KEY (category_id) REFERENCES categories;
 
 --
 -- Name: fk_products_suppliers; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY products
-    ADD CONSTRAINT fk_products_suppliers FOREIGN KEY (supplier_id) REFERENCES suppliers;
-
+ALTER TABLE ONLY products ADD CONSTRAINT fk_products_suppliers FOREIGN KEY (supplier_id) REFERENCES suppliers;
 
 --
 -- Name: fk_territories_region; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY territories
-    ADD CONSTRAINT fk_territories_region FOREIGN KEY (region_id) REFERENCES region;
-
+ALTER TABLE ONLY territories ADD CONSTRAINT fk_territories_region FOREIGN KEY (region_id) REFERENCES region;
 
 --
 -- Name: fk_employee_territories_territories; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY employee_territories
-    ADD CONSTRAINT fk_employee_territories_territories FOREIGN KEY (territory_id) REFERENCES territories;
-
+ALTER TABLE ONLY employee_territories ADD CONSTRAINT fk_employee_territories_territories FOREIGN KEY (territory_id) REFERENCES territories;
 
 --
 -- Name: fk_employee_territories_employees; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY employee_territories
-    ADD CONSTRAINT fk_employee_territories_employees FOREIGN KEY (employee_id) REFERENCES employees;
-
+ALTER TABLE ONLY employee_territories ADD CONSTRAINT fk_employee_territories_employees FOREIGN KEY (employee_id) REFERENCES employees;
 
 --
 -- Name: fk_customer_customer_demo_customer_demographics; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY customer_customer_demo
-    ADD CONSTRAINT fk_customer_customer_demo_customer_demographics FOREIGN KEY (customer_type_id) REFERENCES customer_demographics;
-
+ALTER TABLE ONLY customer_customer_demo ADD CONSTRAINT fk_customer_customer_demo_customer_demographics FOREIGN KEY (customer_type_id) REFERENCES customer_demographics;
 
 --
 -- Name: fk_customer_customer_demo_customers; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY customer_customer_demo
-    ADD CONSTRAINT fk_customer_customer_demo_customers FOREIGN KEY (customer_id) REFERENCES customers;
-
+ALTER TABLE ONLY customer_customer_demo ADD CONSTRAINT fk_customer_customer_demo_customers FOREIGN KEY (customer_id) REFERENCES customers;
 
 --
 -- Name: fk_employees_employees; Type: Constraint; Schema: -; Owner: -
 --
 
-ALTER TABLE ONLY employees
-    ADD CONSTRAINT fk_employees_employees FOREIGN KEY (reports_to) REFERENCES employees;
-
+ALTER TABLE ONLY employees ADD CONSTRAINT fk_employees_employees FOREIGN KEY (reports_to) REFERENCES employees;
     
 --
 -- PostgreSQL database dump complete
